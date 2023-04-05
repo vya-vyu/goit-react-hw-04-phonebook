@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Form = ({ handleSubmitContacts }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
+  //con
   const handleSubmit = e => {
     e.preventDefault();
 

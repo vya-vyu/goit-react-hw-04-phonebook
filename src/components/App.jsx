@@ -5,6 +5,7 @@ import ContactsList from './ContactsList/ContactsList';
 import Form from './Form/Form';
 
 export const App = () => {
+  //coment
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(
     JSON.parse(window.localStorage.getItem('contacts')) ?? [
