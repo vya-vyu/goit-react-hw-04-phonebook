@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import s from './FilterContacts.module.css';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const FilterContacts = ({ onFilter }) => {
   const [filter, setFilter] = useState('');
@@ -24,5 +25,9 @@ const FilterContacts = ({ onFilter }) => {
       </div>
     );
   }
+};
+
+FilterContacts.propTypes = {
+  onFilter: PropTypes.func,
 };
 export default FilterContacts;
