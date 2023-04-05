@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import s from './FilterContacts.module.css';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const FilterContacts = ({ onFilter }) => {
