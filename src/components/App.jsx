@@ -15,24 +15,22 @@ export const App = () => {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ]
   );
-  const [filtredContacts, setfFiltredContacts] = useState([]);
+  // const [filtredContacts, setfFiltredContacts] = useState([]);
 
-  const onFilter = value => {
-    setFilter(value);
+  // const onFilter = value => {
+  //   setFilter(value);
+  // };
+  const arr = () => {
+    return contacts.filter(el =>
+      el.name.toLowerCase().includes(filter.toLowerCase())
+    );
   };
-  useEffect(() => {
-    setfFiltredContacts([
-      ...contacts.filter(el =>
-        el.name.toLowerCase().includes(filter.toLowerCase())
-      ),
-    ]);
-  }, [filter, contacts]);
 
   const handleDeleteContact = id => {
     setContacts([...contacts.filter(el => el.id !== id)]);
   };
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
   const handleSubmitContacts = data => {
     contacts.find(
@@ -55,8 +53,8 @@ export const App = () => {
     >
       <Form handleSubmitContacts={handleSubmitContacts} />
       <h2>Contacts</h2>
-      <FilterContacts onFilter={onFilter} />
-      <ContactsList contacts={filtredContacts} onDelete={handleDeleteContact} />
+      <FilterContacts filter={filter} setFilter={setFilter} />
+      <ContactsList contacts={arr()} onDelete={handleDeleteContact} />
     </div>
   );
 };
