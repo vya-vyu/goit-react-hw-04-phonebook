@@ -5,7 +5,6 @@ import ContactsList from './ContactsList/ContactsList';
 import Form from './Form/Form';
 
 export const App = () => {
-  //comentssss
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(
     JSON.parse(window.localStorage.getItem('contacts')) ?? [
@@ -15,11 +14,7 @@ export const App = () => {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ]
   );
-  // const [filtredContacts, setfFiltredContacts] = useState([]);
 
-  // const onFilter = value => {
-  //   setFilter(value);
-  // };
   const arr = () => {
     return contacts.filter(el =>
       el.name.toLowerCase().includes(filter.toLowerCase())

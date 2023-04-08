@@ -1,14 +1,7 @@
-// import { useState, useEffect } from 'react';
 import s from './FilterContacts.module.css';
 import PropTypes from 'prop-types';
 
 const FilterContacts = ({ filter, setFilter }) => {
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   onFilter(filter);
-  // }, [filter]);
-
   return (
     <div className={s.filterWrapper}>
       <label htmlFor="filter">Find contacts by name</label>
